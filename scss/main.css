@@ -1,1 +1,18 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #df4040;
+  height: 5rem;
+  display: flex;
+}
+header h1 {
+  text-align: center;
+  width: 100%;
+  align-self: center;
+  color: white;
+  font-family: "Noto Serif Display";
+  font-size: 2rem;
+}/*# sourceMappingURL=main.css.map */
