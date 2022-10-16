@@ -2,13 +2,33 @@ function createMain() {
     const body = document.querySelector("body");
     const main = document.createElement("main");
     body.appendChild(main);
+
     main.appendChild(createMenuDiv());
     main.appendChild(createContentDiv());
 }
 
 function createMenuDiv() {
     const menuDiv = document.createElement("div");
+    const buttonsContainer = document.createElement("div");
+    menuDiv.appendChild(buttonsContainer);
+
+    const buttons = addDefaultButtons();
+    // add default buttons to container
+    buttons.forEach((button) => {
+        buttonsContainer.appendChild(button);
+    });
     return menuDiv; 
+}
+
+// create default buttons here and handle custom ones in another function
+function addDefaultButtons() {
+    const upcoming = document.createElement("button");
+    upcoming.textContent = "Upcoming";
+    const projects = document.createElement("button");
+    projects.textContent = "Projects";
+    const personal = document.createElement("button");
+    personal.textContent = "Personal";
+    return [upcoming, projects, personal];
 }
 
 function createContentDiv() {
