@@ -1,0 +1,22 @@
+$primary-color: white;
+$secondary-color: #df4040;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $secondary-color;
+    height: 5rem;
+    display: flex;
+  
+    h1 {
+        text-align: center;
+        width: 100%;
+        align-self: center;
+        color: $primary-color;
+        font-family: "Noto Serif Display";
+        font-size: 2rem;
+    }
+}
