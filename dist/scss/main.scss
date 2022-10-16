@@ -20,3 +20,19 @@ header {
         font-size: 2rem;
     }
 }
+
+main {
+    height: 100vh;
+}
+
+.menu-div {
+    width: 25%;
+    height: 100%;
+}
+
+.buttons-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

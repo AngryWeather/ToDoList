@@ -9,7 +9,9 @@ function createMain() {
 
 function createMenuDiv() {
     const menuDiv = document.createElement("div");
+    menuDiv.classList.toggle("menu-div");
     const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.toggle("buttons-container");
     menuDiv.appendChild(buttonsContainer);
 
     const buttons = addDefaultButtons();
