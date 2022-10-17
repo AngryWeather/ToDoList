@@ -19,11 +19,11 @@ function createMenuDiv() {
     defaultButtons.forEach((button) => {
         buttonsContainer.appendChild(button);
     });
+
     return menuDiv; 
 }
 
-function generateProject() {
-    return console.log("hello");
+function generateProject(e) {
 }
 
 // create default buttons here and handle custom ones in another function
