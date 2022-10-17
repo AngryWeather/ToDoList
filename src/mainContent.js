@@ -24,6 +24,10 @@ function createMenuDiv() {
 }
 
 function generateProject(e) {
+    const contentDiv = document.querySelector(".content-div");
+    const projectHeading = document.createElement("h2");
+    projectHeading.textContent = e.target.textContent;
+    contentDiv.appendChild(projectHeading);
 }
 
 // create default buttons here and handle custom ones in another function
@@ -40,6 +44,7 @@ function addDefaultButtons() {
 
 function createContentDiv() {
     const contentDiv = document.createElement("div");
+    contentDiv.classList.toggle("content-div");
     return contentDiv;
 }
 export{ createMain };

@@ -25,6 +25,7 @@ header {
 
 main {
     height: 100vh;
+    display: flex;
 }
 
 .menu-div {
@@ -62,4 +63,8 @@ main {
     background-color: $primary-color;
     color: $secondary-color;
     border: 1px solid $secondary-color;
+}
+
+.content-div {
+    width: 100%;
 }

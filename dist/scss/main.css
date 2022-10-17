@@ -20,6 +20,7 @@ header h1 {
 
 main {
   height: 100vh;
+  display: flex;
 }
 
 .menu-div {
@@ -53,4 +54,8 @@ main {
   background-color: white;
   color: #bf5555;
   border: 1px solid #bf5555;
+}
+
+.content-div {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
