@@ -58,4 +58,14 @@ main {
 
 .content-div {
   width: 75%;
+  padding: 2rem;
+  font-family: monospace;
+}
+.content-div h2 {
+  color: #808080;
+  font-size: 1.3rem;
+}
+
+h1, h2 {
+  font-weight: normal;
 }/*# sourceMappingURL=main.css.map */
