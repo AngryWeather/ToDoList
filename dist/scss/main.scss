@@ -1,5 +1,6 @@
 $primary-color: white;
-$secondary-color: #df4040;
+$secondary-color: #bf5555;
+$active-color: #df4040;
 
 * {
     margin: 0;
@@ -39,7 +40,7 @@ main {
 
     button {
         height: 2rem;
-        border: none;
+        // border: none;
         border-radius: 0;
         font-family: monospace;
     }
@@ -48,5 +49,15 @@ main {
         background-color: $secondary-color;
         color: $primary-color;
         border: 1px solid $primary-color;
+
+        &:active, &:focus{
+            background-color: $active-color;
+        }
     }
+}
+
+.project-buttons {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
 }

@@ -27,9 +27,10 @@ function addDefaultButtons() {
     const upcoming = document.createElement("button");
     upcoming.textContent = "Upcoming";
     const projects = document.createElement("button");
-    projects.textContent = "Projects";
+    projects.textContent = "Add Project";
     const personal = document.createElement("button");
     personal.textContent = "Personal";
+    personal.classList.toggle("project-buttons")
     return [upcoming, projects, personal];
 }
 
