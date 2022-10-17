@@ -22,6 +22,10 @@ function createMenuDiv() {
     return menuDiv; 
 }
 
+function generateProject() {
+    return console.log("hello");
+}
+
 // create default buttons here and handle custom ones in another function
 function addDefaultButtons() {
     const upcoming = document.createElement("button");
@@ -39,3 +43,4 @@ function createContentDiv() {
     return contentDiv;
 }
 export{ createMain };
+export { generateProject };
