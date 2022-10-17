@@ -25,6 +25,7 @@ main {
 .menu-div {
   width: 25%;
   height: 100%;
+  border-right: 2px solid #bf5555;
 }
 
 .buttons-container {
