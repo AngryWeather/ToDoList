@@ -1,6 +1,7 @@
 $primary-color: white;
 $secondary-color: #bf5555;
 $active-color: #df4040;
+$main-text-color: #808080;
 
 * {
     margin: 0;
@@ -67,4 +68,15 @@ main {
 
 .content-div {
     width: 75%;
+    padding: 2rem;
+    font-family: monospace;
+
+    h2 {
+        color: $main-text-color;
+        font-size: 1.3rem;
+    }
+}
+
+h1, h2 {
+    font-weight: normal;
 }
