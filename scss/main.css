@@ -4,7 +4,7 @@
 }
 
 header {
-  background-color: #df4040;
+  background-color: #bf5555;
   height: 5rem;
   display: flex;
 }
@@ -35,12 +35,20 @@ main {
 }
 .buttons-container button {
   height: 2rem;
-  border: none;
   border-radius: 0;
   font-family: monospace;
 }
 .buttons-container button:first-of-type, .buttons-container button:nth-child(2) {
-  background-color: #df4040;
+  background-color: #bf5555;
   color: white;
   border: 1px solid white;
+}
+.buttons-container button:first-of-type:active, .buttons-container button:first-of-type:focus, .buttons-container button:nth-child(2):active, .buttons-container button:nth-child(2):focus {
+  background-color: #df4040;
+}
+
+.project-buttons {
+  background-color: white;
+  color: #bf5555;
+  border: 1px solid #bf5555;
 }/*# sourceMappingURL=main.css.map */
