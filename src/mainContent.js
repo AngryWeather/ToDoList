@@ -14,9 +14,9 @@ function createMenuDiv() {
     buttonsContainer.classList.toggle("buttons-container");
     menuDiv.appendChild(buttonsContainer);
 
-    const buttons = addDefaultButtons();
+    const defaultButtons = addDefaultButtons();
     // add default buttons to container
-    buttons.forEach((button) => {
+    defaultButtons.forEach((button) => {
         buttonsContainer.appendChild(button);
     });
     return menuDiv; 
