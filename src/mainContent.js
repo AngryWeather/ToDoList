@@ -25,9 +25,18 @@ function createMenuDiv() {
 
 function generateProject(e) {
     const contentDiv = document.querySelector(".content-div");
+
+    const headingButtonContainer = document.createElement("div");
+    headingButtonContainer.classList.toggle("heading-button-container");
+    contentDiv.appendChild(headingButtonContainer);
+
     const projectHeading = document.createElement("h2");
     projectHeading.textContent = e.target.textContent;
-    contentDiv.appendChild(projectHeading);
+    headingButtonContainer.appendChild(projectHeading);
+
+    const newTaskButton = document.createElement("button");
+    newTaskButton.textContent = "New Task";
+    headingButtonContainer.appendChild(newTaskButton);
 }
 
 // create default buttons here and handle custom ones in another function
