@@ -65,6 +65,19 @@ main {
   color: #808080;
   font-size: 1.3rem;
 }
+.content-div .heading-button-container {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+.content-div .heading-button-container button {
+  background-color: #bf5555;
+  color: white;
+  border: 1px solid white;
+  height: 2rem;
+  width: 6rem;
+  font-family: monospace;
+}
 
 h1, h2 {
   font-weight: normal;
