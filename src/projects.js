@@ -1,4 +1,5 @@
 import { generateProject } from "./mainContent";
+import { newTaskPopUp } from "./mainContent";
 
 class Project {
     constructor(name) {
@@ -20,7 +21,7 @@ class Task {
 // }
 
 function addEventListenerNewTask() {
-    const newTaskButton = document.querySelector(".heading-button-container > button");
+    const newTaskButton = document.querySelector(".heading-button-container");
     newTaskButton.addEventListener("click", newTaskPopUp);
 }
 
@@ -32,3 +33,4 @@ function addEventListenerProjects() {
 }
 
 export { addEventListenerProjects };
+export { addEventListenerNewTask };

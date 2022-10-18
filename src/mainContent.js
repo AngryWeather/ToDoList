@@ -1,3 +1,6 @@
+import { addEventListenerNewTask } from "./projects";
+
+
 function createMain() {
     const body = document.querySelector("body");
     const main = document.createElement("main");
@@ -37,6 +40,16 @@ function generateProject(e) {
     const newTaskButton = document.createElement("button");
     newTaskButton.textContent = "New Task";
     headingButtonContainer.appendChild(newTaskButton);
+
+    addEventListenerNewTask();
+}
+
+function newTaskPopUp() {
+    const contentDiv = document.querySelector(".content-div");
+    const newTaskContainer= document.createElement("div");
+    newTaskContainer.classList.toggle("new-task-container");
+    console.log("new task");
+    contentDiv.appendChild(newTaskContainer);
 }
 
 // create default buttons here and handle custom ones in another function
@@ -58,3 +71,4 @@ function createContentDiv() {
 }
 export{ createMain };
 export { generateProject };
+export { newTaskPopUp };
