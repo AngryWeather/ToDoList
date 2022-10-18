@@ -48,8 +48,11 @@ function newTaskPopUp() {
     const contentDiv = document.querySelector(".content-div");
     const newTaskContainer= document.createElement("div");
     newTaskContainer.classList.toggle("new-task-container");
-    console.log("new task");
     contentDiv.appendChild(newTaskContainer);
+
+    const description = document.createElement("p");
+    description.textContent = "Description";
+    newTaskContainer.appendChild(description);
 }
 
 // create default buttons here and handle custom ones in another function

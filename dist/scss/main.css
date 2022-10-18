@@ -82,4 +82,12 @@ main {
 
 h1, h2 {
   font-weight: normal;
+}
+
+.new-task-container {
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  border: 5px solid #df4040;
+  margin-top: 2rem;
 }/*# sourceMappingURL=main.css.map */
