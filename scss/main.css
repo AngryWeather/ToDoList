@@ -73,10 +73,11 @@ main {
 .content-div .heading-button-container button {
   background-color: #bf5555;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #bf5555;
   height: 2rem;
   width: 6rem;
   font-family: monospace;
+  border-radius: 20px;
 }
 
 h1, h2 {
