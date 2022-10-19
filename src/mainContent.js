@@ -52,7 +52,7 @@ function newTaskPopUp() {
     contentDiv.appendChild(newTaskContainer);
 
     const descriptionLabel = document.createElement("label");
-    descriptionLabel.textContent = "Description";
+    descriptionLabel.textContent = "Description:";
     descriptionLabel.setAttribute("for", "description");
     newTaskContainer.appendChild(descriptionLabel);
 
@@ -60,6 +60,16 @@ function newTaskPopUp() {
     descriptionInput.type = "text";
     descriptionInput.id = "description";
     newTaskContainer.appendChild(descriptionInput);
+
+    const dueDateLabel = document.createElement("label");
+    dueDateLabel.textContent = "Due date:";
+    dueDateLabel.setAttribute("for", "due-date");
+    newTaskContainer.appendChild(dueDateLabel);
+
+    const dueDate = document.createElement("input");
+    dueDate.type = "date";
+    dueDate.id = "due-date";
+    newTaskContainer.appendChild(dueDate);
 }
 
 // create default buttons here and handle custom ones in another function
