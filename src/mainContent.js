@@ -112,6 +112,18 @@ function newTaskPopUp() {
     highPriorityLabel.textContent = "High";
     highPriorityLabel.setAttribute("for", "high");
     radioContainer.appendChild(highPriorityLabel);
+
+    const addCancelContainer = document.createElement("div");
+    addCancelContainer.classList.toggle("add-cancel-container");
+    newTaskContainer.appendChild(addCancelContainer);
+
+    const addTaskButton = document.createElement("button");
+    addTaskButton.textContent = "Add Task";
+    addCancelContainer.appendChild(addTaskButton);
+
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+    addCancelContainer.appendChild(cancelButton);
 }
 
 // create default buttons here and handle custom ones in another function
