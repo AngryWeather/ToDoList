@@ -70,6 +70,48 @@ function newTaskPopUp() {
     dueDate.type = "date";
     dueDate.id = "due-date";
     newTaskContainer.appendChild(dueDate);
+
+    const radioContainer = document.createElement("div");
+    radioContainer.classList.toggle("radio-container");
+    newTaskContainer.appendChild(radioContainer);
+
+    const priorityLabel = document.createElement("label");
+    priorityLabel.textContent = "Priority:";
+    priorityLabel.setAttribute("for", "priority");
+    radioContainer.appendChild(priorityLabel);
+
+    const lowPriority = document.createElement("input");
+    lowPriority.id = "low";
+    lowPriority.type = "radio";
+    lowPriority.name = "priority";
+    radioContainer.appendChild(lowPriority);
+
+    const lowPriorityLabel = document.createElement("label");
+    lowPriorityLabel.textContent = "Low";
+    lowPriorityLabel.setAttribute("for", "low");
+    radioContainer.appendChild(lowPriorityLabel);
+
+    const mediumPriority = document.createElement("input");
+    mediumPriority.id = "medium";
+    mediumPriority.type = "radio";
+    mediumPriority.name = "priority";
+    radioContainer.appendChild(mediumPriority);
+
+    const mediumPriorityLabel = document.createElement("label");
+    mediumPriorityLabel.textContent = "Medium";
+    mediumPriorityLabel.setAttribute("for", "medium");
+    radioContainer.appendChild(mediumPriorityLabel);
+
+    const highPriority = document.createElement("input");
+    highPriority.id = "high";
+    highPriority.type = "radio";
+    highPriority.name = "priority";
+    radioContainer.appendChild(highPriority);
+
+    const highPriorityLabel = document.createElement("label");
+    highPriorityLabel.textContent = "High";
+    highPriorityLabel.setAttribute("for", "high");
+    radioContainer.appendChild(highPriorityLabel);
 }
 
 // create default buttons here and handle custom ones in another function
