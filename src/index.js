@@ -27,4 +27,5 @@ function clearContent() {
     main.removeChild(contentDiv);
 }
 
-export { setActiveTab }; 
+export { setActiveTab };
+export { clearContent };

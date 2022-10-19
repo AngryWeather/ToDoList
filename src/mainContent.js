@@ -1,4 +1,5 @@
 import { addEventListenerNewProject, addEventListenerNewTask } from "./projects";
+import { clearContent } from "./index.js";
 
 
 function createMain() {
@@ -27,7 +28,11 @@ function createMenuDiv() {
 }
 
 function generateProject(e) {
-    const contentDiv = document.querySelector(".content-div");
+    clearContent();
+    const main = document.querySelector("main");
+
+    const contentDiv = createContentDiv();
+    main.appendChild(contentDiv);
 
     const headingButtonContainer = document.createElement("div");
     headingButtonContainer.classList.toggle("heading-button-container");

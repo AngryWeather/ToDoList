@@ -31,6 +31,8 @@ function createProject(e) {
     projectButton.classList.toggle("project-buttons");
     projectButton.textContent = newProjectInput;
     buttonsContainer.appendChild(projectButton);
+
+    addEventListenerProjects();
 }
 
 function currentProject(e) {
