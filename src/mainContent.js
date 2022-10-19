@@ -132,10 +132,23 @@ function addDefaultButtons() {
     upcoming.textContent = "Upcoming";
     const projects = document.createElement("button");
     projects.textContent = "Add Project";
+    projects.classList.toggle("add-project");
     const personal = document.createElement("button");
     personal.textContent = "Personal";
     personal.classList.toggle("project-buttons")
     return [upcoming, projects, personal];
+}
+
+function newProjectForm() {
+    const contentDiv = document.querySelector(".content-div");
+    const newProjectInput = document.createElement("input");
+    newProjectInput.type = "text";
+    contentDiv.appendChild(newProjectInput);
+    
+    const newProjectButton = document.createElement("button");
+    newProjectButton.classList.toggle("new-project-button");
+    newProjectButton.textContent = "Add";
+    contentDiv.appendChild(newProjectButton);
 }
 
 function createContentDiv() {
@@ -146,3 +159,4 @@ function createContentDiv() {
 export{ createMain };
 export { generateProject };
 export { newTaskPopUp };
+export { newProjectForm };
