@@ -71,14 +71,14 @@ function newTaskPopUp() {
     dueDate.id = "due-date";
     newTaskContainer.appendChild(dueDate);
 
-    const radioContainer = document.createElement("div");
-    radioContainer.classList.toggle("radio-container");
-    newTaskContainer.appendChild(radioContainer);
-
     const priorityLabel = document.createElement("label");
     priorityLabel.textContent = "Priority:";
     priorityLabel.setAttribute("for", "priority");
-    radioContainer.appendChild(priorityLabel);
+    newTaskContainer.appendChild(priorityLabel);
+
+    const radioContainer = document.createElement("div");
+    radioContainer.classList.toggle("radio-container");
+    newTaskContainer.appendChild(radioContainer);
 
     const lowPriority = document.createElement("input");
     lowPriority.id = "low";

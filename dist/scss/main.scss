@@ -106,10 +106,18 @@ h1, h2 {
     padding: 2rem;
 }
 
-label {
+.new-task-container > label {
     display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-input {
+.new-task-container > input {
     width: 90%;
+}
+
+.radio-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
 }
