@@ -91,4 +91,12 @@ h1, h2 {
   border: 5px solid #df4040;
   margin-top: 2rem;
   padding: 2rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 90%;
 }/*# sourceMappingURL=main.css.map */
