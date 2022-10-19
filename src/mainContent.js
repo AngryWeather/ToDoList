@@ -53,7 +53,7 @@ function newTaskPopUp() {
 
     const descriptionLabel = document.createElement("label");
     descriptionLabel.textContent = "Description";
-    descriptionLabel.for = "description";
+    descriptionLabel.setAttribute("for", "description");
     newTaskContainer.appendChild(descriptionLabel);
 
     const descriptionInput = document.createElement("input");
