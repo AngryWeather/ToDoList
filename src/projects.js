@@ -8,9 +8,15 @@ function addEventListenerNewTask() {
     newTaskButton.addEventListener("click", newTaskPopUp);
 }
 
+function addEventListenerNewProject() {
+    const newProjectButton = document.querySelector(".new-project-button");
+    newProjectButton.addEventListener("click", createProject);
+}
+
 function addEventListenerProjects() {
     const addProjectButton = document.querySelector(".add-project");
     addProjectButton.addEventListener("click", setActiveTab);
+
     const projectButtons = document.querySelectorAll(".project-buttons");
     projectButtons.forEach((button) => {
         button.addEventListener("click", currentProject);
@@ -18,7 +24,7 @@ function addEventListenerProjects() {
 }
 
 function createProject(e) {
-    
+    console.log(e);
 }
 
 function currentProject(e) {
@@ -27,3 +33,4 @@ function currentProject(e) {
 
 export { addEventListenerProjects };
 export { addEventListenerNewTask };
+export { addEventListenerNewProject };

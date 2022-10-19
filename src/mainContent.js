@@ -1,4 +1,4 @@
-import { addEventListenerNewTask } from "./projects";
+import { addEventListenerNewProject, addEventListenerNewTask } from "./projects";
 
 
 function createMain() {
@@ -150,6 +150,8 @@ function newProjectForm() {
     newProjectButton.classList.toggle("new-project-button");
     newProjectButton.textContent = "Add";
     contentDiv.appendChild(newProjectButton);
+
+    addEventListenerNewProject();
 }
 
 function createContentDiv() {
