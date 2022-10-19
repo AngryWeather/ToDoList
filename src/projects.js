@@ -1,7 +1,6 @@
 import { generateProject } from "./mainContent";
 import { newTaskPopUp } from "./mainContent";
-import { Project } from "./newProject";
-import { newProjectForm } from "./mainContent";
+import { setActiveTab } from "./index.js";
 
 
 function addEventListenerNewTask() {
@@ -11,17 +10,16 @@ function addEventListenerNewTask() {
 
 function addEventListenerProjects() {
     const addProjectButton = document.querySelector(".add-project");
-    addProjectButton.addEventListener("click", newProjectForm);
+    addProjectButton.addEventListener("click", setActiveTab);
     const projectButtons = document.querySelectorAll(".project-buttons");
     projectButtons.forEach((button) => {
         button.addEventListener("click", currentProject);
     });
 }
 
-// function createProject(e) {
-//     const project = new Project(`${e.target.}`);
-//     console.log(project.name)
-// }
+function createProject(e) {
+    
+}
 
 function currentProject(e) {
     generateProject(e);

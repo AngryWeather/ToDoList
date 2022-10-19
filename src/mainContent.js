@@ -141,6 +141,7 @@ function addDefaultButtons() {
 
 function newProjectForm() {
     const contentDiv = document.querySelector(".content-div");
+
     const newProjectInput = document.createElement("input");
     newProjectInput.type = "text";
     contentDiv.appendChild(newProjectInput);
@@ -160,3 +161,4 @@ export{ createMain };
 export { generateProject };
 export { newTaskPopUp };
 export { newProjectForm };
+export { createContentDiv };
