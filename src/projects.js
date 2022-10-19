@@ -24,7 +24,13 @@ function addEventListenerProjects() {
 }
 
 function createProject(e) {
-    console.log(e);
+    const buttonsContainer = document.querySelector(".buttons-container");
+    const newProjectInput = document.querySelector(".content-div > input").value;
+
+    const projectButton = document.createElement("button");
+    projectButton.classList.toggle("project-buttons");
+    projectButton.textContent = newProjectInput;
+    buttonsContainer.appendChild(projectButton);
 }
 
 function currentProject(e) {
