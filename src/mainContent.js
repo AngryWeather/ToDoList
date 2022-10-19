@@ -39,20 +39,27 @@ function generateProject(e) {
 
     const newTaskButton = document.createElement("button");
     newTaskButton.textContent = "New Task";
+    newTaskButton.tabindex = "0";
     headingButtonContainer.appendChild(newTaskButton);
 
     addEventListenerNewTask();
 }
-
+``
 function newTaskPopUp() {
     const contentDiv = document.querySelector(".content-div");
     const newTaskContainer= document.createElement("div");
     newTaskContainer.classList.toggle("new-task-container");
     contentDiv.appendChild(newTaskContainer);
 
-    const description = document.createElement("p");
-    description.textContent = "Description";
-    newTaskContainer.appendChild(description);
+    const descriptionLabel = document.createElement("label");
+    descriptionLabel.textContent = "Description";
+    descriptionLabel.for = "description";
+    newTaskContainer.appendChild(descriptionLabel);
+
+    const descriptionInput = document.createElement("input");
+    descriptionInput.type = "text";
+    descriptionInput.id = "description";
+    newTaskContainer.appendChild(descriptionInput);
 }
 
 // create default buttons here and handle custom ones in another function
