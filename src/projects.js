@@ -37,7 +37,8 @@ function addTask(e) {
 
 function newProject(e) {
     const value = document.querySelector(".content-div > input").value;
-    const project = new Project(value);
+    const id = document.querySelectorAll(".project-buttons").length;
+    const project = new Project(value, id);
     Project.allProjects.push(project);
     console.log(Project.allProjects);
 

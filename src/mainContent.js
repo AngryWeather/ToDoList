@@ -144,8 +144,13 @@ function addDefaultButtons() {
     projects.classList.toggle("add-project");
     const personal = document.createElement("button");
     personal.textContent = "Personal";
-    Project.allProjects.push(new Project(personal.textContent));
     personal.classList.toggle("project-buttons")
+
+    // assign id to deafult personal project
+    const personalId = document.querySelectorAll(".project-buttons").length;
+    Project.allProjects.push(new Project(personal.textContent, personalId));
+    personal.id = `${personalId}`;
+
     return [upcoming, projects, personal];
 }
 
