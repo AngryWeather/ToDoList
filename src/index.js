@@ -13,7 +13,6 @@ function setActiveTab(e) {
     let activeTab = e.target.textContent;
     clearContent();
     main.appendChild(createContentDiv());
-    console.log(activeTab);
     switch (activeTab) {
         case "Add Project":
             newProjectForm();

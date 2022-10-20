@@ -50,6 +50,21 @@ function generateProject(activeProject) {
     headingButtonContainer.appendChild(newTaskButton);
 
     addEventListenerNewTask();
+   
+    activeProject.tasks.forEach((task) => {
+        const taskInput = document.createElement("input");
+        taskInput.type = "checkbox";
+        taskInput.value = `${task.description}`;
+        taskInput.id = `${task.description}`;
+
+        const taskLabel = document.createElement("label");
+        taskLabel.setAttribute("for", taskInput.id);
+        taskLabel.textContent = taskInput.value;
+        
+        contentDiv.appendChild(taskInput);
+        contentDiv.appendChild(taskLabel);
+    })
+
 }
 ``
 function newTaskPopUp() {

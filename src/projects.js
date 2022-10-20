@@ -33,15 +33,13 @@ function addEventListenerProjects() {
 
 function addTask(e) {
     const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
-    console.log("add Task");
-    console.log(activeProject);
     const description = document.querySelector("#description").value;
     const dueDate = document.querySelector("#due-date").value;
     const priority = document.querySelector("input[name=priority]:checked").value;
 
     activeProject.tasks.push(new Task(description, dueDate, priority));
     removeAddTask();
-    console.log(activeProject.tasks);
+    generateProject(activeProject);
 }
 
 function newProject(e) {
@@ -49,7 +47,6 @@ function newProject(e) {
     const id = document.querySelectorAll(".project-buttons").length;
     const project = new Project(value, id);
     Project.allProjects.push(project);
-    console.log(Project.allProjects);
 
     renderNewProject(project);
 }
