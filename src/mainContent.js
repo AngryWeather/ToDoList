@@ -29,7 +29,7 @@ function createMenuDiv() {
     return menuDiv; 
 }
 
-function generateProject(e) {
+function generateProject(activeProject) {
     clearContent();
     const main = document.querySelector("main");
 
@@ -41,7 +41,7 @@ function generateProject(e) {
     contentDiv.appendChild(headingButtonContainer);
 
     const projectHeading = document.createElement("h2");
-    projectHeading.textContent = e.target.textContent;
+    projectHeading.textContent = activeProject.name;
     headingButtonContainer.appendChild(projectHeading);
 
     const newTaskButton = document.createElement("button");

@@ -46,10 +46,9 @@ function newProject(e) {
 }
 
 function currentProject(e) {
-    const activeProject = e.target.id;
-    console.log(Project.allProjects);
-    console.log("Active: " + activeProject);
-    generateProject(e);
+    const activeProject = Project.allProjects[Number(e.target.id)];
+    console.log(activeProject);
+    generateProject(activeProject);
 }
 
 export { addEventListenerProjects };
