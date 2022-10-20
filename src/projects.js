@@ -3,7 +3,6 @@ import { newTaskPopUp, renderNewProject } from "./mainContent";
 import { setActiveTab } from "./index.js";
 import { Project, projects } from "./newProject";
 
-
 function addEventListenerNewTask() {
     const newTaskButton = document.querySelector(".heading-button-container");
     newTaskButton.addEventListener("click", newTaskPopUp);
@@ -30,9 +29,9 @@ function addEventListenerProjects() {
 }
 
 function addTask(e) {
+    const activeProject = document.querySelector(".active-project");
     console.log("add Task");
     const description = document.querySelector("#description");
-
 }
 
 function newProject(e) {
@@ -46,9 +45,12 @@ function newProject(e) {
 }
 
 function currentProject(e) {
-    const activeProject = Project.allProjects[Number(e.target.id)];
-    console.log(activeProject);
-    generateProject(activeProject);
+    document.querySelectorAll(".project-buttons").forEach((button) => {
+        button.classList.remove("active-project");
+    })
+    e.target.classList.add("active-project");
+    const project = Project.allProjects[Number(e.target.id)];
+    generateProject(project);
 }
 
 export { addEventListenerProjects };
