@@ -1,4 +1,4 @@
-import { addEventListenerNewProject, addEventListenerNewTask } from "./projects";
+import { addEventListenerNewProject, addEventListenerNewTask, addEventListenerProjects } from "./projects";
 import { clearContent } from "./index.js";
 
 
@@ -164,8 +164,22 @@ function createContentDiv() {
     contentDiv.classList.toggle("content-div");
     return contentDiv;
 }
+
+function renderNewProject(e) {
+    const buttonsContainer = document.querySelector(".buttons-container");
+    const newProjectInput = document.querySelector(".content-div > input").value;
+
+    const projectButton = document.createElement("button");
+    projectButton.classList.toggle("project-buttons");
+    projectButton.textContent = newProjectInput;
+    buttonsContainer.appendChild(projectButton);
+
+    addEventListenerProjects();
+}
+
 export{ createMain };
 export { generateProject };
 export { newTaskPopUp };
 export { newProjectForm };
 export { createContentDiv };
+export { renderNewProject };

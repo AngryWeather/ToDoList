@@ -1,6 +1,7 @@
 import { generateProject } from "./mainContent";
-import { newTaskPopUp } from "./mainContent";
+import { newTaskPopUp, renderNewProject } from "./mainContent";
 import { setActiveTab } from "./index.js";
+import { Project, projects } from "./newProject";
 
 
 function addEventListenerNewTask() {
@@ -10,7 +11,7 @@ function addEventListenerNewTask() {
 
 function addEventListenerNewProject() {
     const newProjectButton = document.querySelector(".new-project-button");
-    newProjectButton.addEventListener("click", createProject);
+    newProjectButton.addEventListener("click", newProject);
 }
 
 function addEventListenerProjects() {
@@ -23,16 +24,13 @@ function addEventListenerProjects() {
     });
 }
 
-function createProject(e) {
-    const buttonsContainer = document.querySelector(".buttons-container");
-    const newProjectInput = document.querySelector(".content-div > input").value;
+function newProject(e) {
+    const value = document.querySelector(".content-div > input").value;
+    const project = new Project(value);
+    Project.allProjects.push(project);
+    console.log(Project.allProjects);
 
-    const projectButton = document.createElement("button");
-    projectButton.classList.toggle("project-buttons");
-    projectButton.textContent = newProjectInput;
-    buttonsContainer.appendChild(projectButton);
-
-    addEventListenerProjects();
+    renderNewProject(e);
 }
 
 function currentProject(e) {
