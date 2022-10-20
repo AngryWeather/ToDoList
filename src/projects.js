@@ -30,7 +30,7 @@ function newProject(e) {
     Project.allProjects.push(project);
     console.log(Project.allProjects);
 
-    renderNewProject(e);
+    renderNewProject(project);
 }
 
 function currentProject(e) {

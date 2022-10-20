@@ -1,5 +1,6 @@
 import { addEventListenerNewProject, addEventListenerNewTask, addEventListenerProjects } from "./projects";
 import { clearContent } from "./index.js";
+import { Project } from "./newProject";
 
 
 function createMain() {
@@ -165,13 +166,14 @@ function createContentDiv() {
     return contentDiv;
 }
 
-function renderNewProject(e) {
+function renderNewProject(project) {
     const buttonsContainer = document.querySelector(".buttons-container");
-    const newProjectInput = document.querySelector(".content-div > input").value;
+    // const newProjectInput = document.querySelector(".content-div > input").value;
+    
 
     const projectButton = document.createElement("button");
     projectButton.classList.toggle("project-buttons");
-    projectButton.textContent = newProjectInput;
+    projectButton.textContent = project.name;
     buttonsContainer.appendChild(projectButton);
 
     addEventListenerProjects();
