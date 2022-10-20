@@ -183,6 +183,7 @@ function renderNewProject(project) {
     const projectButton = document.createElement("button");
     projectButton.classList.toggle("project-buttons");
     projectButton.textContent = project.name;
+    projectButton.id = project.id;
     buttonsContainer.appendChild(projectButton);
 
     addEventListenerProjects();
