@@ -1,7 +1,8 @@
-import { generateProject } from "./mainContent";
+import { generateProject, removeAddTask } from "./mainContent";
 import { newTaskPopUp, renderNewProject } from "./mainContent";
 import { setActiveTab } from "./index.js";
-import { Project, projects } from "./newProject";
+import { Project} from "./newProject";
+import { Task } from "./tasks";
 
 function addEventListenerNewTask() {
     const newTaskButton = document.querySelector(".heading-button-container");
@@ -11,6 +12,8 @@ function addEventListenerNewTask() {
 function addEventListenerAddTask() {
     const addTaskButton = document.querySelector(".add-cancel-container > button:first-child");
     addTaskButton.addEventListener("click", addTask);
+    const cancelButton = document.querySelector(".add-cancel-container > button:nth-child(2)");
+    cancelButton.addEventListener("click", removeAddTask);
 }
 
 function addEventListenerNewProject() {
@@ -29,9 +32,16 @@ function addEventListenerProjects() {
 }
 
 function addTask(e) {
-    const activeProject = document.querySelector(".active-project");
+    const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
     console.log("add Task");
-    const description = document.querySelector("#description");
+    console.log(activeProject);
+    const description = document.querySelector("#description").value;
+    const dueDate = document.querySelector("#due-date").value;
+    const priority = document.querySelector("input[name=priority]:checked").value;
+
+    activeProject.tasks.push(new Task(description, dueDate, priority));
+    removeAddTask();
+    console.log(activeProject.tasks);
 }
 
 function newProject(e) {

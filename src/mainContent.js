@@ -91,6 +91,7 @@ function newTaskPopUp() {
     lowPriority.id = "low";
     lowPriority.type = "radio";
     lowPriority.name = "priority";
+    lowPriority.value = "low";
     radioContainer.appendChild(lowPriority);
 
     const lowPriorityLabel = document.createElement("label");
@@ -100,6 +101,7 @@ function newTaskPopUp() {
 
     const mediumPriority = document.createElement("input");
     mediumPriority.id = "medium";
+    mediumPriority.value = "medium";
     mediumPriority.type = "radio";
     mediumPriority.name = "priority";
     radioContainer.appendChild(mediumPriority);
@@ -111,6 +113,7 @@ function newTaskPopUp() {
 
     const highPriority = document.createElement("input");
     highPriority.id = "high";
+    highPriority.value = "high";
     highPriority.type = "radio";
     highPriority.name = "priority";
     radioContainer.appendChild(highPriority);
@@ -133,6 +136,12 @@ function newTaskPopUp() {
     addCancelContainer.appendChild(cancelButton);
 
     addEventListenerAddTask();
+}
+
+function removeAddTask() {
+    const contentDiv = document.querySelector(".content-div");
+    const newTaskContainer = document.querySelector(".new-task-container");
+    contentDiv.removeChild(newTaskContainer);
 }
 
 // create default buttons here and handle custom ones in another function
@@ -195,3 +204,4 @@ export { newTaskPopUp };
 export { newProjectForm };
 export { createContentDiv };
 export { renderNewProject };
+export { removeAddTask };
