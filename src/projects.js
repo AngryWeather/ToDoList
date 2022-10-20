@@ -9,6 +9,11 @@ function addEventListenerNewTask() {
     newTaskButton.addEventListener("click", newTaskPopUp);
 }
 
+function addEventListenerAddTask() {
+    const addTaskButton = document.querySelector(".add-cancel-container > button:first-child");
+    addTaskButton.addEventListener("click", addTask);
+}
+
 function addEventListenerNewProject() {
     const newProjectButton = document.querySelector(".new-project-button");
     newProjectButton.addEventListener("click", newProject);
@@ -24,6 +29,12 @@ function addEventListenerProjects() {
     });
 }
 
+function addTask(e) {
+    console.log("add Task");
+    const description = document.querySelector("#description");
+
+}
+
 function newProject(e) {
     const value = document.querySelector(".content-div > input").value;
     const project = new Project(value);
@@ -34,9 +45,11 @@ function newProject(e) {
 }
 
 function currentProject(e) {
+    console.log(Project.allProjects);
     generateProject(e);
 }
 
 export { addEventListenerProjects };
 export { addEventListenerNewTask };
 export { addEventListenerNewProject };
+export { addEventListenerAddTask };

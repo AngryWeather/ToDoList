@@ -1,6 +1,7 @@
 import { addEventListenerNewProject, addEventListenerNewTask, addEventListenerProjects } from "./projects";
 import { clearContent } from "./index.js";
 import { Project } from "./newProject";
+import { addEventListenerAddTask } from "./projects";
 
 
 function createMain() {
@@ -130,6 +131,8 @@ function newTaskPopUp() {
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "Cancel";
     addCancelContainer.appendChild(cancelButton);
+
+    addEventListenerAddTask();
 }
 
 // create default buttons here and handle custom ones in another function
@@ -141,6 +144,7 @@ function addDefaultButtons() {
     projects.classList.toggle("add-project");
     const personal = document.createElement("button");
     personal.textContent = "Personal";
+    Project.allProjects.push(new Project(personal.textContent));
     personal.classList.toggle("project-buttons")
     return [upcoming, projects, personal];
 }
