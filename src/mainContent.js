@@ -103,36 +103,42 @@ function newTaskPopUp() {
     newTaskContainer.classList.toggle("new-task-container");
     contentDiv.appendChild(newTaskContainer);
 
+    const form = document.createElement("form");
+    newTaskContainer.appendChild(form);
+
     const descriptionLabel = document.createElement("label");
     descriptionLabel.textContent = "Description:";
     descriptionLabel.setAttribute("for", "description");
-    newTaskContainer.appendChild(descriptionLabel);
+    form.appendChild(descriptionLabel);
 
     const descriptionInput = document.createElement("input");
+    descriptionInput.required = true;
     descriptionInput.type = "text";
     descriptionInput.id = "description";
-    newTaskContainer.appendChild(descriptionInput);
+    form.appendChild(descriptionInput);
 
     const dueDateLabel = document.createElement("label");
     dueDateLabel.textContent = "Due date:";
     dueDateLabel.setAttribute("for", "due-date");
-    newTaskContainer.appendChild(dueDateLabel);
+    form.appendChild(dueDateLabel);
 
     const dueDate = document.createElement("input");
+    dueDate.required = true;
     dueDate.type = "date";
     dueDate.id = "due-date";
-    newTaskContainer.appendChild(dueDate);
+    form.appendChild(dueDate);
 
     const priorityLabel = document.createElement("label");
     priorityLabel.textContent = "Priority:";
     priorityLabel.setAttribute("for", "priority");
-    newTaskContainer.appendChild(priorityLabel);
+    form.appendChild(priorityLabel);
 
     const radioContainer = document.createElement("div");
     radioContainer.classList.toggle("radio-container");
-    newTaskContainer.appendChild(radioContainer);
+    form.appendChild(radioContainer);
 
     const lowPriority = document.createElement("input");
+    lowPriority.required = true;
     lowPriority.id = "low";
     lowPriority.type = "radio";
     lowPriority.name = "priority";
@@ -170,9 +176,10 @@ function newTaskPopUp() {
 
     const addCancelContainer = document.createElement("div");
     addCancelContainer.classList.toggle("add-cancel-container");
-    newTaskContainer.appendChild(addCancelContainer);
+    form.appendChild(addCancelContainer);
 
     const addTaskButton = document.createElement("button");
+    addTaskButton.type = "submit";
     addTaskButton.textContent = "Add Task";
     addCancelContainer.appendChild(addTaskButton);
 

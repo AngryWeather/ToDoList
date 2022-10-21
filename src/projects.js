@@ -33,13 +33,21 @@ function addEventListenerProjects() {
 
 function addTask(e) {
     const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
-    const description = document.querySelector("#description").value;
-    const dueDate = document.querySelector("#due-date").value;
-    const priority = document.querySelector("input[name=priority]:checked").value;
 
-    activeProject.tasks.push(new Task(description, dueDate, priority));
-    removeAddTask();
-    generateProject(activeProject);
+    if (!document.querySelector("#description").value ||
+        !document.querySelector("#due-date").value ||
+        !document.querySelector("input[name=priority]:checked").value) {
+            e.preventDefault();
+        } else {
+            const description = document.querySelector("#description").value;
+            const dueDate = document.querySelector("#due-date").value;
+            const priority = document.querySelector("input[name=priority]:checked").value;
+        
+            activeProject.tasks.push(new Task(description, dueDate, priority));
+            removeAddTask();
+            generateProject(activeProject);
+        }
+
 }
 
 function newProject(e) {
