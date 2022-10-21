@@ -119,14 +119,17 @@ h1, h2 {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     color: #808080;
-    font-weight: bold;
+    font-family: monospace;
+    font-size: 0.7rem;
 }
 
 .new-task-container > input {
     width: 90%;
-    // outline: none;
     border: 1px solid $active-color;
     color: #808080;
+    font-family: monospace;
+    min-height: 1.5rem;
+    border-radius: 5px;
 
     &:active, &:focus {
         outline: $active-color solid 2px;
@@ -136,7 +139,34 @@ h1, h2 {
 .radio-container {
     margin-top: 1rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+
+    input[type=radio] {
+        margin-right: 0.5rem;
+
+        &:checked {
+            accent-color: $active-color;
+        }
+    }
+
+    label {
+        margin-right: 3rem;
+        color: #808080;
+        font-family: monospace;
+        font-size: 0.7rem;
+    }
+
+    label[for=low] {
+        color: $secondary-color;
+    }
+
+    label[for=medium] {
+        color: $active-color;
+    }
+
+    label[for=high] {
+        color: #ff2a2a;
+    }
 }
 
 .add-cancel-container {
