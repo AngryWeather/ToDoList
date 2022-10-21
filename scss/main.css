@@ -84,6 +84,9 @@ main {
   font-family: monospace;
   border-radius: 20px;
 }
+.content-div .heading-button-container button:active, .content-div .heading-button-container button:focus {
+  background-color: #df4040;
+}
 
 h1, h2 {
   font-weight: normal;
@@ -162,6 +165,9 @@ form > input:active, form > input:focus {
   width: 6rem;
   font-family: monospace;
   border-radius: 20px;
+}
+.add-cancel-container button:active, .add-cancel-container button:focus {
+  background-color: #df4040;
 }
 
 .new-project-button {

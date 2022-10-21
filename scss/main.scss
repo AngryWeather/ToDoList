@@ -94,6 +94,10 @@ main {
             width: 6rem;
             font-family: monospace;
             border-radius: 20px;
+
+            &:active, &:focus {
+                background-color: $active-color;
+            }
         }
     }
 }
@@ -182,6 +186,10 @@ form > input {
         width: 6rem;
         font-family: monospace;
         border-radius: 20px;
+
+        &:active, &:focus {
+            background-color: $active-color;
+        }
     }
 }
 
