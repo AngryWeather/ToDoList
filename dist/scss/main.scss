@@ -205,12 +205,32 @@ form > input {
     display: flex;
     flex-direction: column;
     margin: 2rem 0;
+    height: 100%;
 }
 
 .checkbox-container {
     margin-bottom: 2rem;
 
+    div {
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    input[type=checkbox] {
+        accent-color: $active-color;
+        width: 1rem;
+        height: 1rem;
+    }
+
     p {
         display: inline;
+        font-family: monospace;
+        color: #808080;
+    }
+
+    label {
+        color: #808080;
+        margin-left: 1rem;
+        font-size: 1rem;
     }
 }
