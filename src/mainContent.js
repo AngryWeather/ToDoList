@@ -64,6 +64,12 @@ function generateProject(activeProject) {
         taskInput.type = "checkbox";
         taskInput.value = `${task.description}`;
         taskInput.id = `${task.description}`;
+        taskInput.checked = task.done;
+        taskInput.addEventListener("change", function(e) {
+            task.done = e.target.checked;
+        })
+
+        console.log(task);
 
         const taskLabel = document.createElement("label");
         taskLabel.setAttribute("for", taskInput.id);
