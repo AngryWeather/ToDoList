@@ -5,7 +5,7 @@ import { Project} from "./newProject";
 import { Task } from "./tasks";
 
 function addEventListenerNewTask() {
-    const newTaskButton = document.querySelector(".heading-button-container");
+    const newTaskButton = document.querySelector(".heading-button-container > button");
     newTaskButton.addEventListener("click", newTaskPopUp);
 }
 

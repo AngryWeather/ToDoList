@@ -51,7 +51,15 @@ function generateProject(activeProject) {
 
     addEventListenerNewTask();
    
+    const tasksContainer = document.createElement("div");
+    tasksContainer.classList.toggle("tasks-container");
+    contentDiv.appendChild(tasksContainer);
+
     activeProject.tasks.forEach((task) => {
+        const checkboxContainer = document.createElement("div");
+        checkboxContainer.classList.toggle("checkbox-container");
+        tasksContainer.appendChild(checkboxContainer);
+
         const taskInput = document.createElement("input");
         taskInput.type = "checkbox";
         taskInput.value = `${task.description}`;
@@ -61,12 +69,23 @@ function generateProject(activeProject) {
         taskLabel.setAttribute("for", taskInput.id);
         taskLabel.textContent = taskInput.value;
         
-        contentDiv.appendChild(taskInput);
-        contentDiv.appendChild(taskLabel);
+        checkboxContainer.appendChild(taskInput);
+        checkboxContainer.appendChild(taskLabel);
+
+        const dueDateContainer = document.createElement("div");
+        checkboxContainer.appendChild(dueDateContainer);
+
+        const dueDateLabel = document.createElement("p");
+        dueDateLabel.textContent = "Due date: ";
+        dueDateContainer.appendChild(dueDateLabel);
+
+        const dueDateGet = document.createElement("p");
+        dueDateGet.textContent = `${task.dueDate}`;
+        dueDateContainer.appendChild(dueDateGet);
     })
 
 }
-``
+
 function newTaskPopUp() {
     const contentDiv = document.querySelector(".content-div");
     const newTaskContainer= document.createElement("div");

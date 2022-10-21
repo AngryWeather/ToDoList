@@ -134,4 +134,13 @@ h1, h2 {
   border: 1px solid #bf5555;
   width: 3rem;
   height: 1.5rem;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-container p {
+  display: inline;
 }/*# sourceMappingURL=main.css.map */
