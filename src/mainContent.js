@@ -82,6 +82,17 @@ function generateProject(activeProject) {
         const dueDateGet = document.createElement("p");
         dueDateGet.textContent = `${task.dueDate}`;
         dueDateContainer.appendChild(dueDateGet);
+
+        const priorityContainer = document.createElement("div");
+        checkboxContainer.appendChild(priorityContainer);
+
+        const priorityLabel = document.createElement("p");
+        priorityLabel.textContent = "Priority: ";
+        priorityContainer.appendChild(priorityLabel);
+
+        const priorityGet = document.createElement("p");
+        priorityGet.textContent = `${task.priority}`;
+        priorityContainer.appendChild(priorityGet);
     })
 
 }

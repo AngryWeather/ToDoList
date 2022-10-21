@@ -139,8 +139,12 @@ h1, h2 {
 .tasks-container {
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
 }
 
+.checkbox-container {
+  margin-bottom: 2rem;
+}
 .checkbox-container p {
   display: inline;
 }/*# sourceMappingURL=main.css.map */
