@@ -101,7 +101,7 @@ h1, h2 {
   top: 0;
 }
 
-.new-task-container > label {
+form > label {
   display: block;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
@@ -110,7 +110,7 @@ h1, h2 {
   font-size: 0.7rem;
 }
 
-.new-task-container > input {
+form > input {
   width: 90%;
   border: 1px solid #df4040;
   color: #808080;
@@ -118,7 +118,7 @@ h1, h2 {
   min-height: 1.5rem;
   border-radius: 5px;
 }
-.new-task-container > input:active, .new-task-container > input:focus {
+form > input:active, form > input:focus {
   outline: #df4040 solid 2px;
 }
 
