@@ -55,6 +55,11 @@ function generateProject(activeProject) {
 
     const removeProject = document.createElement("button");
     removeProject.textContent = "Remove";
+    removeProject.addEventListener("click", function(e) {
+        removeProjectButton(activeProject.id);
+        Project.allProjects.splice(Number(activeProject.id), 1);
+        console.log(Project.allProjects);
+    })
     headingButtonContainer.appendChild(removeProject);
 
     addEventListenerNewTask();
@@ -121,6 +126,7 @@ function generateProject(activeProject) {
             generateProject(activeProject);
         });
         removeButton.textContent = "X";
+
         removeContainer.appendChild(removeButton);
     })
 
@@ -229,8 +235,6 @@ function removeAddTask() {
 
 // create default buttons here and handle custom ones in another function
 function addDefaultButtons() {
-    const upcoming = document.createElement("button");
-    upcoming.textContent = "Upcoming";
     const projects = document.createElement("button");
     projects.textContent = "Add Project";
     projects.classList.toggle("add-project");
@@ -244,7 +248,7 @@ function addDefaultButtons() {
     Project.allProjects.push(new Project(personal.textContent, personalId));
     personal.id = `${personalId}`;
 
-    return [upcoming, projects, personal];
+    return [projects, personal];
 }
 
 function newProjectForm() {
@@ -278,6 +282,13 @@ function renderNewProject(project) {
     buttonsContainer.appendChild(projectButton);
 
     addEventListenerProjects();
+}
+
+function removeProjectButton(index) {
+    const buttonsContainer = document.querySelector(".buttons-container");    
+    const buttonToRemove = document.querySelector(`[id='${index}']`);
+    buttonsContainer.removeChild(buttonToRemove);
+    console.log(buttonToRemove);
 }
 
 export{ createMain };
