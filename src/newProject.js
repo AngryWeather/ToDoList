@@ -6,8 +6,8 @@ class Project {
         this.tasks = [];
     }
 
-    removeTask() {
-        
+    removeTask(index) {
+        this.tasks.splice(index, 1);
     }
 }
 

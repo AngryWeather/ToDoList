@@ -59,7 +59,7 @@ function generateProject(activeProject) {
     contentDiv.appendChild(tasksContainer);
 
     activeProject.tasks.forEach((task) => {
-        console.log(task);
+        console.log(activeProject.tasks.indexOf(task));
         const checkboxContainer = document.createElement("div");
         checkboxContainer.classList.toggle("checkbox-container");
         tasksContainer.appendChild(checkboxContainer);
@@ -112,6 +112,10 @@ function generateProject(activeProject) {
         removeContainer.appendChild(removeLabel);
         
         const removeButton = document.createElement("button");
+        removeButton.addEventListener("click", function(e) {
+            activeProject.removeTask(activeProject.tasks.indexOf(task));
+            generateProject(activeProject);
+        });
         removeButton.textContent = "X";
         removeContainer.appendChild(removeButton);
     })
