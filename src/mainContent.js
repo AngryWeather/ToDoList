@@ -30,8 +30,11 @@ function createMenuDiv() {
 }
 
 function generateProject(activeProject) {
-    clearContent();
     const main = document.querySelector("main");
+
+    if (main.hasChildNodes()) {
+        clearContent();
+    }
 
     const contentDiv = createContentDiv();
     main.appendChild(contentDiv);
@@ -210,6 +213,7 @@ function addDefaultButtons() {
     const personal = document.createElement("button");
     personal.textContent = "Personal";
     personal.classList.toggle("project-buttons")
+    personal.classList.toggle("active-project");
 
     // assign id to deafult personal project
     const personalId = document.querySelectorAll(".project-buttons").length;

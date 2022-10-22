@@ -1,8 +1,8 @@
 import { generateProject, removeAddTask } from "./mainContent";
 import { newTaskPopUp, renderNewProject } from "./mainContent";
-import { setActiveTab } from "./index.js";
 import { Project} from "./newProject";
 import { Task } from "./tasks";
+import { setActiveTab } from "./index";
 
 function addEventListenerNewTask() {
     const newTaskButton = document.querySelector(".heading-button-container > button");

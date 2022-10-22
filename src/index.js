@@ -1,10 +1,12 @@
 import { createHeader } from "./header";
-import { createMain, newProjectForm, creat, createContentDiv } from "./mainContent";
+import { createMain, newProjectForm, createContentDiv, generateProject } from "./mainContent";
 import { addEventListenerProjects } from "./projects";
+import { Project } from "./newProject";
 
 
 createHeader();
 createMain();
+generateProject(Project.allProjects[0]);
 addEventListenerProjects();
 
 const main = document.querySelector("main");
