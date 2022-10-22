@@ -143,14 +143,8 @@ form > input:active, form > input:focus {
   font-family: monospace;
   font-size: 0.7rem;
 }
-.radio-container label[for=low] {
+.radio-container label[for] {
   color: #bf5555;
-}
-.radio-container label[for=medium] {
-  color: #df4040;
-}
-.radio-container label[for=high] {
-  color: #ff2a2a;
 }
 
 .add-cancel-container {
