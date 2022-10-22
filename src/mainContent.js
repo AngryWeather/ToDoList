@@ -59,7 +59,6 @@ function generateProject(activeProject) {
     contentDiv.appendChild(tasksContainer);
 
     activeProject.tasks.forEach((task) => {
-        console.log(activeProject.tasks.indexOf(task));
         const checkboxContainer = document.createElement("div");
         checkboxContainer.classList.toggle("checkbox-container");
         tasksContainer.appendChild(checkboxContainer);
@@ -176,6 +175,7 @@ function newTaskPopUp() {
     radioContainer.appendChild(lowPriorityLabel);
 
     const mediumPriority = document.createElement("input");
+    mediumPriority.required = true;
     mediumPriority.id = "medium";
     mediumPriority.value = "medium";
     mediumPriority.type = "radio";
@@ -188,6 +188,7 @@ function newTaskPopUp() {
     radioContainer.appendChild(mediumPriorityLabel);
 
     const highPriority = document.createElement("input");
+    highPriority.required = true;
     highPriority.id = "high";
     highPriority.value = "high";
     highPriority.type = "radio";

@@ -36,8 +36,8 @@ function addTask(e) {
 
     if (!document.querySelector("#description").value ||
         !document.querySelector("#due-date").value ||
-        !document.querySelector("input[name=priority]:checked").value) {
-            e.preventDefault();
+        !document.querySelector("input[name=priority]:checked")) {
+            return false;
         } else {
             const description = document.querySelector("#description").value;
             const dueDate = document.querySelector("#due-date").value;
