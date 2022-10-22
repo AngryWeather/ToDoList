@@ -33,6 +33,8 @@ function addEventListenerProjects() {
 
 function addTask(e) {
     const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
+    console.log("Add task: ", activeProject);
+
 
     if (!document.querySelector("#description").value ||
         !document.querySelector("#due-date").value ||
@@ -47,22 +49,30 @@ function addTask(e) {
             removeAddTask();
             generateProject(activeProject);
         }
-
 }
 
 function newProject(e) {
     const value = document.querySelector(".content-div > input").value;
     const id = document.querySelectorAll(".project-buttons").length;
+    const idString = String(id);
     const project = new Project(value, id);
     Project.allProjects.push(project);
     generateProject(project);
     renderNewProject(project);
+    const activeProject = document.querySelector(`[id='${idString}']`);
+    console.log("id: " + activeProject);
+
+    document.querySelectorAll(".project-buttons").forEach((button) => {
+        button.classList.remove("active-project");
+    });
+    activeProject.classList.toggle("active-project");
+
 }
 
 function currentProject(e) {
     document.querySelectorAll(".project-buttons").forEach((button) => {
         button.classList.remove("active-project");
-    })
+    });
     e.target.classList.add("active-project");
     const project = Project.allProjects[Number(e.target.id)];
     generateProject(project);

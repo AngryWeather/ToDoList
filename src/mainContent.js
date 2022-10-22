@@ -30,11 +30,12 @@ function createMenuDiv() {
 }
 
 function generateProject(activeProject) {
+    console.log(activeProject);
     const main = document.querySelector("main");
+    clearContent();
 
-    if (main.hasChildNodes()) {
-        clearContent();
-    }
+    // if (main.hasChildNodes()) {
+    // }
 
     const contentDiv = createContentDiv();
     main.appendChild(contentDiv);
@@ -51,6 +52,10 @@ function generateProject(activeProject) {
     newTaskButton.textContent = "New Task";
     newTaskButton.tabindex = "0";
     headingButtonContainer.appendChild(newTaskButton);
+
+    const removeProject = document.createElement("button");
+    removeProject.textContent = "Remove";
+    headingButtonContainer.appendChild(removeProject);
 
     addEventListenerNewTask();
    
@@ -264,9 +269,7 @@ function createContentDiv() {
 }
 
 function renderNewProject(project) {
-    const buttonsContainer = document.querySelector(".buttons-container");
-    // const newProjectInput = document.querySelector(".content-div > input").value;
-    
+    const buttonsContainer = document.querySelector(".buttons-container");    
 
     const projectButton = document.createElement("button");
     projectButton.classList.toggle("project-buttons");
