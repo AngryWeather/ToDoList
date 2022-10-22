@@ -69,8 +69,6 @@ function generateProject(activeProject) {
             task.done = e.target.checked;
         })
 
-        console.log(task);
-
         const taskLabel = document.createElement("label");
         taskLabel.setAttribute("for", taskInput.id);
         taskLabel.textContent = taskInput.value;

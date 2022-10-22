@@ -9,6 +9,10 @@ $main-text-color: #808080;
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     height: 100vh;
 }
@@ -48,7 +52,6 @@ main {
 
     button {
         height: 2rem;
-        // border: none;
         border-radius: 0;
         font-family: monospace;
     }
@@ -75,6 +78,7 @@ main {
     width: 75%;
     padding: 2rem;
     font-family: monospace;
+    height: 100%;
 
     h2 {
         color: $main-text-color;
