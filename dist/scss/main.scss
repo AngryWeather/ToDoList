@@ -9,12 +9,8 @@ $main-text-color: #808080;
     box-sizing: border-box;
 }
 
-html {
-    min-height: 100%;
-}
-
 body {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 header {
@@ -33,7 +29,7 @@ header {
 }
 
 main {
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
 }
 

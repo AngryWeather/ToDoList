@@ -55,7 +55,7 @@ function newProject(e) {
     const id = document.querySelectorAll(".project-buttons").length;
     const project = new Project(value, id);
     Project.allProjects.push(project);
-
+    generateProject(project);
     renderNewProject(project);
 }
 
