@@ -59,6 +59,7 @@ function generateProject(activeProject) {
     contentDiv.appendChild(tasksContainer);
 
     activeProject.tasks.forEach((task) => {
+        console.log(task);
         const checkboxContainer = document.createElement("div");
         checkboxContainer.classList.toggle("checkbox-container");
         tasksContainer.appendChild(checkboxContainer);

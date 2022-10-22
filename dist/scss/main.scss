@@ -159,17 +159,9 @@ form > input {
         font-family: monospace;
         font-size: 0.7rem;
     }
-
-    label[for=low] {
+    
+    label[for] {
         color: $secondary-color;
-    }
-
-    label[for=medium] {
-        color: $active-color;
-    }
-
-    label[for=high] {
-        color: #ff2a2a;
     }
 }
 
