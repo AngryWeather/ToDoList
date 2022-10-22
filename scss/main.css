@@ -45,12 +45,12 @@ main {
   border-radius: 0;
   font-family: monospace;
 }
-.buttons-container button:first-of-type, .buttons-container button:nth-child(2) {
+.buttons-container button:first-of-type {
   background-color: #bf5555;
   color: white;
   border: 1px solid white;
 }
-.buttons-container button:first-of-type:active, .buttons-container button:first-of-type:focus, .buttons-container button:nth-child(2):active, .buttons-container button:nth-child(2):focus {
+.buttons-container button:first-of-type:active, .buttons-container button:first-of-type:focus {
   background-color: #df4040;
 }
 
