@@ -34,9 +34,6 @@ function generateProject(activeProject) {
     const main = document.querySelector("main");
     clearContent();
 
-    // if (main.hasChildNodes()) {
-    // }
-
     const contentDiv = createContentDiv();
     main.appendChild(contentDiv);
 
@@ -52,13 +49,16 @@ function generateProject(activeProject) {
     newTaskButton.textContent = "New Task";
     newTaskButton.tabindex = "0";
     headingButtonContainer.appendChild(newTaskButton);
-
+ 
     const removeProject = document.createElement("button");
     removeProject.textContent = "Remove";
     removeProject.addEventListener("click", function(e) {
+        console.log("Active project: " + activeProject.name);
+        const nextActiveProject = Project.allProjects[Number(activeProject.id - 1)];
+        console.log(nextActiveProject);
+
         removeProjectButton(activeProject.id);
         Project.allProjects.splice(Number(activeProject.id), 1);
-        console.log(Project.allProjects);
     })
     headingButtonContainer.appendChild(removeProject);
 
@@ -288,7 +288,6 @@ function removeProjectButton(index) {
     const buttonsContainer = document.querySelector(".buttons-container");    
     const buttonToRemove = document.querySelector(`[id='${index}']`);
     buttonsContainer.removeChild(buttonToRemove);
-    console.log(buttonToRemove);
 }
 
 export{ createMain };

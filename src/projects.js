@@ -60,7 +60,7 @@ function newProject(e) {
     generateProject(project);
     renderNewProject(project);
     const activeProject = document.querySelector(`[id='${idString}']`);
-    console.log("id: " + activeProject);
+    console.log("id: " + activeProject.id);
 
     document.querySelectorAll(".project-buttons").forEach((button) => {
         button.classList.remove("active-project");
