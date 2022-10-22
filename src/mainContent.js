@@ -59,6 +59,7 @@ function generateProject(activeProject) {
 
         removeProjectButton(activeProject.id);
         Project.allProjects.splice(Number(activeProject.id), 1);
+        generateProject(nextActiveProject);
     })
     headingButtonContainer.appendChild(removeProject);
 
