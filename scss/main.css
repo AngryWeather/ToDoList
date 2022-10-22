@@ -73,7 +73,7 @@ main {
 }
 .content-div .heading-button-container {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
   align-items: center;
 }
 .content-div .heading-button-container button {
@@ -101,7 +101,7 @@ h1, h2 {
   margin-top: 2rem;
   padding: 2rem;
   position: absolute;
-  left: 40%;
+  left: 45%;
   top: 0;
 }
 
@@ -123,7 +123,10 @@ form > input {
   border-radius: 5px;
 }
 form > input:active, form > input:focus {
-  outline: #df4040 solid 2px;
+  outline: #bf5555 solid 2px;
+}
+form > input:invalid {
+  outline: #df4040 solid 3px;
 }
 
 .radio-container {
