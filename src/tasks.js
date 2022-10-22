@@ -5,6 +5,7 @@ class Task {
         this.priority = priority;
         this.done = false;
     }
+
 }
 
 

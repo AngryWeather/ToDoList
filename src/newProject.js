@@ -5,6 +5,10 @@ class Project {
         this.id = id;
         this.tasks = [];
     }
+
+    removeTask() {
+        
+    }
 }
 
 

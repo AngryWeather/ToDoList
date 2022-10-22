@@ -72,6 +72,7 @@ function generateProject(activeProject) {
             task.done = e.target.checked;
         })
 
+
         const taskLabel = document.createElement("label");
         taskLabel.setAttribute("for", taskInput.id);
         taskLabel.textContent = taskInput.value;
@@ -100,6 +101,18 @@ function generateProject(activeProject) {
         const priorityGet = document.createElement("p");
         priorityGet.textContent = `${task.priority}`;
         priorityContainer.appendChild(priorityGet);
+
+        const removeContainer = document.createElement("div");
+        removeContainer.classList.toggle("remove-container");
+        checkboxContainer.appendChild(removeContainer);
+
+        const removeLabel = document.createElement("p");
+        removeLabel.textContent = "Remove:";
+        removeContainer.appendChild(removeLabel);
+        
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "X";
+        removeContainer.appendChild(removeButton);
     })
 
 }
