@@ -30,7 +30,9 @@ function createMenuDiv() {
 }
 
 function generateProject(activeProject) {
-    console.log(activeProject);
+    console.log("Active project: " + activeProject.name);
+    Project.allProjects.forEach((e) => console.log(e));
+
     const main = document.querySelector("main");
     clearContent();
 
@@ -53,13 +55,45 @@ function generateProject(activeProject) {
     const removeProject = document.createElement("button");
     removeProject.textContent = "Remove";
     removeProject.addEventListener("click", function(e) {
-        console.log("Active project: " + activeProject.name);
-        const nextActiveProject = Project.allProjects[Number(activeProject.id - 1)];
-        console.log(nextActiveProject);
+
+
+        if (!activeProject) {
+            return false;
+        }
+        let nextActiveProject;
+ 
+        if ((!Project.allProjects[Number(activeProject.id - 1)])
+            && (!Project.allProjects[Number(activeProject.id + 1)])) {
+                console.log("if");
+                return false;
+            } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
+                nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]
+                console.log("else if");
+            } else {
+                nextActiveProject = Project.allProjects[Number(activeProject.id - 1)];      
+                console.log("else");
+            }
+
+        console.log("Next project: " + nextActiveProject.name);
 
         removeProjectButton(activeProject.id);
         Project.allProjects.splice(Number(activeProject.id), 1);
-        generateProject(nextActiveProject);
+
+        resetIds();
+
+        function resetIds() {
+            for (let i = 0; i < Project.allProjects.length; i++) {
+                Project.allProjects[i].id = i;
+                const projectButtons = document.querySelectorAll(".project-buttons");
+                projectButtons[i].id = String(i);
+            }
+        }
+
+        if (!nextActiveProject) {
+            return false;
+        } else {
+            generateProject(nextActiveProject);
+        }
     })
     headingButtonContainer.appendChild(removeProject);
 
