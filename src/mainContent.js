@@ -297,6 +297,7 @@ function newProjectForm() {
 
     const newProjectInput = document.createElement("input");
     newProjectInput.type = "text";
+    newProjectInput.classList.toggle("new-project-input");
     contentDiv.appendChild(newProjectInput);
     
     const newProjectButton = document.createElement("button");
