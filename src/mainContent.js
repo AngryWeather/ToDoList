@@ -74,13 +74,9 @@ function generateProject(activeProject) {
                 return false;
             } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
                 nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]
-                console.log("else if");
             } else {
                 nextActiveProject = Project.allProjects[Number(activeProject.id - 1)];      
-                console.log("else");
             }
-
-        console.log("Next project: " + nextActiveProject.name);
 
         removeProjectButton(activeProject.id);
         Project.allProjects.splice(Number(activeProject.id), 1);
@@ -174,6 +170,13 @@ function generateProject(activeProject) {
 }
 
 function newTaskPopUp() {
+    // remove "Can't have 0 projects error"
+    const headingButtonContainer = document.querySelector(".heading-button-container");
+    if (headingButtonContainer.childElementCount === 4) {
+        const error = document.querySelector(".heading-button-container > p")
+        headingButtonContainer.removeChild(error);
+    }
+
     const contentDiv = document.querySelector(".content-div");
     const newTaskContainer= document.createElement("div");
     newTaskContainer.classList.toggle("new-task-container");
