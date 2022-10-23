@@ -65,9 +65,12 @@ function generateProject(activeProject) {
         if ((!Project.allProjects[Number(activeProject.id - 1)])
             && (!Project.allProjects[Number(activeProject.id + 1)])) {
                 const headingButtonContainer = document.querySelector(".heading-button-container");
-                const error = document.createElement("p");
-                error.textContent = "Can't have 0 projects!";
-                headingButtonContainer.appendChild(error);
+
+                if (headingButtonContainer.childElementCount != 4) {
+                    const error = document.createElement("p");
+                    error.textContent = "Can't have 0 projects!";
+                    headingButtonContainer.appendChild(error);
+                }
                 return false;
             } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
                 nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]
