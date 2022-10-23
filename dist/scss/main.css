@@ -173,6 +173,18 @@ form > input:invalid {
   background-color: #df4040;
 }
 
+input[type=text]::-moz-selection {
+  background-color: #bf5555;
+  opacity: 0.5;
+  color: white;
+}
+
+input[type=text]::selection {
+  background-color: #bf5555;
+  opacity: 0.5;
+  color: white;
+}
+
 .new-project-button {
   background-color: #bf5555;
   color: white;

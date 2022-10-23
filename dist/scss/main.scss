@@ -195,6 +195,12 @@ form > input {
     }
 }
 
+input[type=text]::selection {
+    background-color: $secondary-color;
+    opacity: 0.5;
+    color: $primary-color;
+}
+
 .new-project-button {
     background-color: $secondary-color;
     color: $primary-color;
