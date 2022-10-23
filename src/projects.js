@@ -33,8 +33,6 @@ function addEventListenerProjects() {
 
 function addTask(e) {
     const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
-    console.log("Add task: ", activeProject);
-
 
     if (!document.querySelector("#description").value ||
         !document.querySelector("#due-date").value ||
@@ -60,7 +58,6 @@ function newProject(e) {
     generateProject(project);
     renderNewProject(project);
     const activeProject = document.querySelector(`[id='${idString}']`);
-    console.log("id: " + activeProject.id);
 
     document.querySelectorAll(".project-buttons").forEach((button) => {
         button.classList.remove("active-project");
