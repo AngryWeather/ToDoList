@@ -243,6 +243,10 @@ form > input {
     margin-left: 1rem;
     background-color: $secondary-color;
     border: 1px solid $secondary-color;
-    // border-radius: 20px;
     color: $primary-color;
+}
+
+.new-project-input {
+    border: 2px solid $secondary-color;
+    outline: none;
 }
