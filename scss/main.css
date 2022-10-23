@@ -176,9 +176,10 @@ form > input:invalid {
 .new-project-button {
   background-color: #bf5555;
   color: white;
-  border: 1px solid #bf5555;
+  border: 2px solid #bf5555;
   width: 3rem;
   height: 1.5rem;
+  font-family: monospace;
 }
 
 .tasks-container {
@@ -223,4 +224,7 @@ form > input:invalid {
 .new-project-input {
   border: 2px solid #bf5555;
   outline: none;
+  font-family: monospace;
+  color: #545454;
+  height: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
