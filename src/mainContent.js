@@ -64,7 +64,10 @@ function generateProject(activeProject) {
  
         if ((!Project.allProjects[Number(activeProject.id - 1)])
             && (!Project.allProjects[Number(activeProject.id + 1)])) {
-                console.log("if");
+                const headingButtonContainer = document.querySelector(".heading-button-container");
+                const error = document.createElement("p");
+                error.textContent = "Can't have 0 projects!";
+                headingButtonContainer.appendChild(error);
                 return false;
             } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
                 nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]

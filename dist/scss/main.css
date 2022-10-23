@@ -76,6 +76,11 @@ main {
   gap: 2rem;
   align-items: center;
 }
+.content-div .heading-button-container p {
+  color: #bf5555;
+  font-size: 1.2rem;
+  font-family: monospace;
+}
 .content-div .heading-button-container button {
   background-color: #bf5555;
   color: white;
