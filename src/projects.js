@@ -32,7 +32,7 @@ function addEventListenerProjects() {
 }
 
 function addTask(e) {
-    const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
+    const activeProject = Project.projects[Number(document.querySelector(".active-project").id)];
 
     if (!document.querySelector("#description").value ||
         !document.querySelector("#due-date").value ||
@@ -44,6 +44,7 @@ function addTask(e) {
             const priority = document.querySelector("input[name=priority]:checked").value;
         
             activeProject.tasks.push(new Task(description, dueDate, priority));
+            Project.setProjects();
             removeAddTask();
             generateProject(activeProject);
         }
@@ -54,7 +55,9 @@ function newProject(e) {
     const id = document.querySelectorAll(".project-buttons").length;
     const idString = String(id);
     const project = new Project(value, id);
-    Project.allProjects.push(project);
+    Project.projects.push(project);
+    Project.setProjects();
+
     generateProject(project);
     renderNewProject(project);
     const activeProject = document.querySelector(`[id='${idString}']`);
@@ -71,7 +74,7 @@ function currentProject(e) {
         button.classList.remove("active-project");
     });
     e.target.classList.add("active-project");
-    const project = Project.allProjects[Number(e.target.id)];
+    const project = Project.projects[Number(e.target.id)];
     generateProject(project);
 }
 

@@ -30,6 +30,8 @@ function createMenuDiv() {
 }
 
 function generateProject(activeProject) {
+    console.log("Active project name: " + activeProject.name);
+
     const main = document.querySelector("main");
     clearContent();
 
@@ -59,8 +61,8 @@ function generateProject(activeProject) {
         }
         let nextActiveProject;
  
-        if ((!Project.allProjects[Number(activeProject.id - 1)])
-            && (!Project.allProjects[Number(activeProject.id + 1)])) {
+        if ((!Project.projects[Number(activeProject.id - 1)])
+            && (!Project.projects[Number(activeProject.id + 1)])) {
                 const headingButtonContainer = document.querySelector(".heading-button-container");
 
                 if (headingButtonContainer.childElementCount != 4) {
@@ -69,20 +71,21 @@ function generateProject(activeProject) {
                     headingButtonContainer.appendChild(error);
                 }
                 return false;
-            } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
-                nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]
+            } else if (!Project.projects[Number(activeProject.id - 1)]) {
+                nextActiveProject = Project.projects[Number(activeProject.id + 1)]
             } else {
-                nextActiveProject = Project.allProjects[Number(activeProject.id - 1)];      
+                nextActiveProject = Project.projects[Number(activeProject.id - 1)];      
             }
 
         removeProjectButton(activeProject.id);
-        Project.allProjects.splice(Number(activeProject.id), 1);
+        Project.projects.splice(Number(activeProject.id), 1);
+        Project.setProjects();
 
         resetIds();
 
         function resetIds() {
-            for (let i = 0; i < Project.allProjects.length; i++) {
-                Project.allProjects[i].id = i;
+            for (let i = 0; i < Project.projects.length; i++) {
+                Project.projects[i].id = i;
                 const projectButtons = document.querySelectorAll(".project-buttons");
                 projectButtons[i].id = String(i);
             }
@@ -114,6 +117,7 @@ function generateProject(activeProject) {
         taskInput.checked = task.done;
         taskInput.addEventListener("change", function(e) {
             task.done = e.target.checked;
+            Project.setProjects();
         })
 
 
@@ -279,17 +283,23 @@ function addDefaultButtons() {
     const projects = document.createElement("button");
     projects.textContent = "Add Project";
     projects.classList.toggle("add-project");
-    const personal = document.createElement("button");
-    personal.textContent = "Personal";
-    personal.classList.toggle("project-buttons")
-    personal.classList.toggle("active-project");
 
+    const defaultButtons = [];
+    defaultButtons.push(projects);
     // assign id to deafult personal project
-    const personalId = document.querySelectorAll(".project-buttons").length;
-    Project.allProjects.push(new Project(personal.textContent, personalId));
-    personal.id = `${personalId}`;
+    if (!Project.projects) {
+        const personal = document.createElement("button");
+        personal.textContent = "Personal";
+        personal.classList.toggle("project-buttons")
+        personal.classList.toggle("active-project");
+        const personalId = document.querySelectorAll(".project-buttons").length;
+        personal.id = `${personalId}`;
+        Project.projects.push(new Project(personal.textContent, personalId));
+        Project.setProjects();
+        defaultButtons.push(personal);
+    }
 
-    return [projects, personal];
+    return defaultButtons;
 }
 
 function newProjectForm() {

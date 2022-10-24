@@ -2,12 +2,20 @@ import { createHeader } from "./header";
 import { createMain, newProjectForm, createContentDiv, generateProject } from "./mainContent";
 import { addEventListenerProjects } from "./projects";
 import { Project } from "./newProject";
+import { renderNewProject } from "./mainContent";
 
 
 createHeader();
 createMain();
-generateProject(Project.allProjects[0]);
+generateProject(Project.projects[0]);
 addEventListenerProjects();
+// const projects = JSON.parse(localStorage.getItem("projects"));
+// console.log("projects length: " + projects.length);
+
+for (let i = 0; i < Project.projects.length; i++) {
+    console.log("Project: " + Project.projects[i].name);
+    renderNewProject(Project.projects[i]);
+}
 
 const main = document.querySelector("main");
 
