@@ -9,11 +9,8 @@ createHeader();
 createMain();
 generateProject(Project.projects[0]);
 addEventListenerProjects();
-// const projects = JSON.parse(localStorage.getItem("projects"));
-// console.log("projects length: " + projects.length);
 
 for (let i = 0; i < Project.projects.length; i++) {
-    console.log("Project: " + Project.projects[i].name);
     renderNewProject(Project.projects[i]);
 }
 

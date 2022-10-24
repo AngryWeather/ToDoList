@@ -30,8 +30,6 @@ function createMenuDiv() {
 }
 
 function generateProject(activeProject) {
-    console.log("Active project name: " + activeProject.name);
-
     const main = document.querySelector("main");
     clearContent();
 
