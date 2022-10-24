@@ -4,9 +4,10 @@ import { addEventListenerProjects } from "./projects";
 import { Project } from "./newProject";
 import { renderNewProject } from "./mainContent";
 
-
 createHeader();
 createMain();
+console.log(Project.projects);
+
 generateProject(Project.projects[0]);
 addEventListenerProjects();
 

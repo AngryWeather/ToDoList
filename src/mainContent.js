@@ -285,17 +285,18 @@ function addDefaultButtons() {
     const defaultButtons = [];
     defaultButtons.push(projects);
     // assign id to deafult personal project
-    if (!Project.projects) {
-        const personal = document.createElement("button");
-        personal.textContent = "Personal";
-        personal.classList.toggle("project-buttons")
-        personal.classList.toggle("active-project");
-        const personalId = document.querySelectorAll(".project-buttons").length;
-        personal.id = `${personalId}`;
-        Project.projects.push(new Project(personal.textContent, personalId));
-        Project.setProjects();
-        defaultButtons.push(personal);
-    }
+    console.log(!Project.projects.length);
+    // if (!Project.projects.length) {
+    //     const personal = document.createElement("button");
+    //     personal.textContent = "Personal";
+    //     personal.classList.toggle("project-buttons")
+    //     personal.classList.toggle("active-project");
+    //     const personalId = document.querySelectorAll(".project-buttons").length;
+    //     personal.id = `${personalId}`;
+    //     Project.projects.push(new Project(personal.textContent, personalId));
+    //     Project.setProjects();
+    //     defaultButtons.push(personal);
+    // }
 
     return defaultButtons;
 }
