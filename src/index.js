@@ -9,10 +9,20 @@ createHeader();
 createMain();
     if (Project.projects.length) {
         for (let i = 0; i < Project.projects.length; i++) {
+            Project.allProjects.push(new Project(Project.projects[i].name, Project.projects[i].id));
             renderNewProject(Project.projects[i]);
+            console.log("TASKS storage:");
+            console.log(Project.projects[i].tasks);
+            console.log("TASKS:");
+            Project.allProjects[i].tasks.push(Project.projects[i].tasks);
+            console.log(Project.allProjects[i].tasks);
+
         }
     }
-
+    console.log("All projects:");
+    console.log(Project.allProjects);
+const firstButton = document.querySelector(".buttons-container > button:nth-child(2)");
+firstButton.classList.add("active-project");
 generateProject(Project.projects[0]);
 addEventListenerProjects();
 

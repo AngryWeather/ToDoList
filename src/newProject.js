@@ -1,5 +1,4 @@
 class Project {
-    // static allProjects = [];
     static allProjects = [];
     static projects = JSON.parse(localStorage.getItem("projects")) || [];
 
@@ -8,6 +7,11 @@ class Project {
         this.id = id;
         this.tasks = [];
     }
+
+    printer() {
+        console.log("hello world");
+    }
+
 
     removeTask(index) {
         this.tasks.splice(index, 1);

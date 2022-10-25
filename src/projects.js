@@ -32,7 +32,7 @@ function addEventListenerProjects() {
 }
 
 function addTask(e) {
-    const activeProject = Project.projects[Number(document.querySelector(".active-project").id)];
+    const activeProject = Project.allProjects[Number(document.querySelector(".active-project").id)];
 
     if (!document.querySelector("#description").value ||
         !document.querySelector("#due-date").value ||
@@ -56,6 +56,8 @@ function newProject(e) {
     const idString = String(id);
     const project = new Project(value, id);
     Project.projects.push(project);
+    Project.allProjects.push(project);
+
     Project.setProjects();
 
     generateProject(project);

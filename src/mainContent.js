@@ -77,11 +77,14 @@ function generateProject(activeProject) {
 
         removeProjectButton(activeProject.id);
         Project.projects.splice(Number(activeProject.id), 1);
+        Project.allProjects.splice(Number(activeProject.id), 1);
+
 
         resetIds();
 
         function resetIds() {
             for (let i = 0; i < Project.projects.length; i++) {
+                Project.allProjects[i].id = i;
                 Project.projects[i].id = i;
                 const projectButtons = document.querySelectorAll(".project-buttons");
                 projectButtons[i].id = String(i);
@@ -160,6 +163,7 @@ function generateProject(activeProject) {
         const removeButton = document.createElement("button");
         removeButton.addEventListener("click", function(e) {
             activeProject.removeTask(activeProject.tasks.indexOf(task));
+            console.log(activeProject.tasks.indexOf(task));
             generateProject(activeProject);
         });
         removeButton.textContent = "X";
@@ -296,6 +300,7 @@ function addDefaultButtons() {
         // assign id to deafult personal project
         const personalId = document.querySelectorAll(".project-buttons").length;
         personal.id = `${personalId}`;
+        Project.allProjects.push(new Project(personal.textContent, personalId));
         Project.projects.push(new Project(personal.textContent, personalId));
         Project.setProjects();
         // defaultButtons.push(personal);
