@@ -2,18 +2,22 @@ import { createHeader } from "./header";
 import { createMain, newProjectForm, createContentDiv, generateProject } from "./mainContent";
 import { addEventListenerProjects } from "./projects";
 import { Project } from "./newProject";
-import { renderNewProject } from "./mainContent";
+import { renderNewProject, addDefaultButtons } from "./mainContent";
+
+// console.log("Before all id: " + Project.projects[0].id);
 
 createHeader();
 createMain();
-console.log(Project.projects);
+console.log("Before id: " + Project.projects[0].id);
+    if (Project.projects.length) {
+        for (let i = 0; i < Project.projects.length; i++) {
+            renderNewProject(Project.projects[i]);
+        }
+    }
+    console.log("After id: " + Project.projects[0].id);
 
 generateProject(Project.projects[0]);
 addEventListenerProjects();
-
-for (let i = 0; i < Project.projects.length; i++) {
-    renderNewProject(Project.projects[i]);
-}
 
 const main = document.querySelector("main");
 

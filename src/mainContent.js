@@ -77,7 +77,6 @@ function generateProject(activeProject) {
 
         removeProjectButton(activeProject.id);
         Project.projects.splice(Number(activeProject.id), 1);
-        Project.setProjects();
 
         resetIds();
 
@@ -86,6 +85,9 @@ function generateProject(activeProject) {
                 Project.projects[i].id = i;
                 const projectButtons = document.querySelectorAll(".project-buttons");
                 projectButtons[i].id = String(i);
+                console.log("reset id: " + Project.projects[i].id);
+                Project.setProjects();
+
             }
         }
 
@@ -284,19 +286,22 @@ function addDefaultButtons() {
 
     const defaultButtons = [];
     defaultButtons.push(projects);
-    // assign id to deafult personal project
-    console.log(!Project.projects.length);
-    // if (!Project.projects.length) {
-    //     const personal = document.createElement("button");
-    //     personal.textContent = "Personal";
-    //     personal.classList.toggle("project-buttons")
-    //     personal.classList.toggle("active-project");
-    //     const personalId = document.querySelectorAll(".project-buttons").length;
-    //     personal.id = `${personalId}`;
-    //     Project.projects.push(new Project(personal.textContent, personalId));
-    //     Project.setProjects();
-    //     defaultButtons.push(personal);
-    // }
+
+
+    if (!Project.projects.length) {
+
+        console.log("Creating personal button...");
+        const personal = document.createElement("button");
+        personal.textContent = "Personal";
+        personal.classList.toggle("project-buttons")
+        personal.classList.toggle("active-project");
+        // assign id to deafult personal project
+        const personalId = document.querySelectorAll(".project-buttons").length;
+        personal.id = `${personalId}`;
+        Project.projects.push(new Project(personal.textContent, personalId));
+        Project.setProjects();
+        // defaultButtons.push(personal);
+    }
 
     return defaultButtons;
 }
@@ -339,6 +344,8 @@ function removeProjectButton(index) {
     const buttonsContainer = document.querySelector(".buttons-container");    
     const buttonToRemove = document.querySelector(`[id='${index}']`);
     buttonsContainer.removeChild(buttonToRemove);
+    console.log("Remove projcts");
+    console.log(Project.projects);
 }
 
 export{ createMain };
@@ -348,3 +355,4 @@ export { newProjectForm };
 export { createContentDiv };
 export { renderNewProject };
 export { removeAddTask };
+export { addDefaultButtons };
