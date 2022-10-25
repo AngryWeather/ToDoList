@@ -59,8 +59,8 @@ function generateProject(activeProject) {
         }
         let nextActiveProject;
  
-        if ((!Project.projects[Number(activeProject.id - 1)])
-            && (!Project.projects[Number(activeProject.id + 1)])) {
+        if ((!Project.allProjects[Number(activeProject.id - 1)])
+            && (!Project.allProjects[Number(activeProject.id + 1)])) {
                 const headingButtonContainer = document.querySelector(".heading-button-container");
 
                 if (headingButtonContainer.childElementCount != 4) {
@@ -69,23 +69,22 @@ function generateProject(activeProject) {
                     headingButtonContainer.appendChild(error);
                 }
                 return false;
-            } else if (!Project.projects[Number(activeProject.id - 1)]) {
-                nextActiveProject = Project.projects[Number(activeProject.id + 1)]
+            } else if (!Project.allProjects[Number(activeProject.id - 1)]) {
+                nextActiveProject = Project.allProjects[Number(activeProject.id + 1)]
             } else {
                 nextActiveProject = Project.projects[Number(activeProject.id - 1)];      
             }
 
         removeProjectButton(activeProject.id);
-        Project.projects.splice(Number(activeProject.id), 1);
         Project.allProjects.splice(Number(activeProject.id), 1);
+        Project.setProjects();
 
 
         resetIds();
 
         function resetIds() {
-            for (let i = 0; i < Project.projects.length; i++) {
+            for (let i = 0; i < Project.allProjects.length; i++) {
                 Project.allProjects[i].id = i;
-                Project.projects[i].id = i;
                 const projectButtons = document.querySelectorAll(".project-buttons");
                 projectButtons[i].id = String(i);
                 Project.setProjects();
@@ -163,8 +162,9 @@ function generateProject(activeProject) {
         const removeButton = document.createElement("button");
         removeButton.addEventListener("click", function(e) {
             activeProject.removeTask(activeProject.tasks.indexOf(task));
-            console.log(activeProject.tasks.indexOf(task));
             generateProject(activeProject);
+            Project.setProjects();
+
         });
         removeButton.textContent = "X";
 
@@ -292,7 +292,6 @@ function addDefaultButtons() {
 
 
     if (!Project.projects.length) {
-
         const personal = document.createElement("button");
         personal.textContent = "Personal";
         personal.classList.toggle("project-buttons")
@@ -301,9 +300,8 @@ function addDefaultButtons() {
         const personalId = document.querySelectorAll(".project-buttons").length;
         personal.id = `${personalId}`;
         Project.allProjects.push(new Project(personal.textContent, personalId));
-        Project.projects.push(new Project(personal.textContent, personalId));
         Project.setProjects();
-        // defaultButtons.push(personal);
+        defaultButtons.push(personal);
     }
 
     return defaultButtons;
@@ -333,7 +331,6 @@ function createContentDiv() {
 
 function renderNewProject(project) {
     const buttonsContainer = document.querySelector(".buttons-container");    
-
     const projectButton = document.createElement("button");
     projectButton.classList.toggle("project-buttons");
     projectButton.textContent = project.name;

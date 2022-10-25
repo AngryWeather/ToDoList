@@ -18,7 +18,7 @@ class Project {
     }
 
     static setProjects() {
-        localStorage.setItem("projects", JSON.stringify(Project.projects));
+        localStorage.setItem("projects", JSON.stringify(Project.allProjects));
     }
 }
 

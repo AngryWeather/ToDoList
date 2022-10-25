@@ -55,7 +55,6 @@ function newProject(e) {
     const id = document.querySelectorAll(".project-buttons").length;
     const idString = String(id);
     const project = new Project(value, id);
-    Project.projects.push(project);
     Project.allProjects.push(project);
 
     Project.setProjects();
@@ -76,7 +75,7 @@ function currentProject(e) {
         button.classList.remove("active-project");
     });
     e.target.classList.add("active-project");
-    const project = Project.projects[Number(e.target.id)];
+    const project = Project.allProjects[Number(e.target.id)];
     generateProject(project);
 }
 
