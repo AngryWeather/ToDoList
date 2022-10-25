@@ -4,17 +4,14 @@ import { addEventListenerProjects } from "./projects";
 import { Project } from "./newProject";
 import { renderNewProject, addDefaultButtons } from "./mainContent";
 
-// console.log("Before all id: " + Project.projects[0].id);
 
 createHeader();
 createMain();
-console.log("Before id: " + Project.projects[0].id);
     if (Project.projects.length) {
         for (let i = 0; i < Project.projects.length; i++) {
             renderNewProject(Project.projects[i]);
         }
     }
-    console.log("After id: " + Project.projects[0].id);
 
 generateProject(Project.projects[0]);
 addEventListenerProjects();

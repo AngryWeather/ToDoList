@@ -75,8 +75,6 @@ function currentProject(e) {
     });
     e.target.classList.add("active-project");
     const project = Project.projects[Number(e.target.id)];
-    console.log("Current:");
-    console.log(Project.projects);
     generateProject(project);
 }
 

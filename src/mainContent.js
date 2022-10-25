@@ -85,7 +85,6 @@ function generateProject(activeProject) {
                 Project.projects[i].id = i;
                 const projectButtons = document.querySelectorAll(".project-buttons");
                 projectButtons[i].id = String(i);
-                console.log("reset id: " + Project.projects[i].id);
                 Project.setProjects();
 
             }
@@ -290,7 +289,6 @@ function addDefaultButtons() {
 
     if (!Project.projects.length) {
 
-        console.log("Creating personal button...");
         const personal = document.createElement("button");
         personal.textContent = "Personal";
         personal.classList.toggle("project-buttons")
@@ -344,8 +342,6 @@ function removeProjectButton(index) {
     const buttonsContainer = document.querySelector(".buttons-container");    
     const buttonToRemove = document.querySelector(`[id='${index}']`);
     buttonsContainer.removeChild(buttonToRemove);
-    console.log("Remove projcts");
-    console.log(Project.projects);
 }
 
 export{ createMain };
