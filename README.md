@@ -28,11 +28,6 @@ Clicking "Add Project" will show you a field where you can enter your project's 
 Click "Add" and your project will show up in the menu on the left. You can start adding tasks to it right away.</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201175139-c31c30a4-f19c-4570-b545-5b5a0010f9b5.png)</br></br>
 
-Po kliknięciu "Add Project" pojawi się pole do wpisania nazwy.</br>
-![obraz](https://user-images.githubusercontent.com/105065960/201174531-8ca5a527-fe90-422d-a4fc-c4d202a319be.png)</br></br>
-Po kliknięciu "Add" twój projekt pojawi się w menu po lewej. Od razu możesz dodać do niego nowe zadania.</br>
-![obraz](https://user-images.githubusercontent.com/105065960/201175139-c31c30a4-f19c-4570-b545-5b5a0010f9b5.png)</br></br>
-
 ## Remove
 If you don't want your project anymore you can remove it by clicking "Remove" next to "New Task".</br>
 The list in the menu will update in no time.</br>
