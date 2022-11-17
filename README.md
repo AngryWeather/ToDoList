@@ -1,7 +1,7 @@
 # ToDoList
 
 ToDoList allows you to add and delete projects. </br>
-You can safely refresh the page, since the website uses local storage to store your data.</br></br>
+You can safely refresh the page since the website uses local storage to store your data.</br></br>
 
 You can add tasks with a title, date and priority to every project.</br>
 By default there's one project named "Personal".</br>
