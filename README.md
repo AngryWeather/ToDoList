@@ -9,7 +9,7 @@ By default there's one project named "Personal".</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201168252-b89e5ae3-9b93-4d5d-94c4-b29ca386a5e5.png)</br>
 
 ## New Task
-After clicking "New Task" the window with possibility to add task will show up.</br>
+After clicking "New Task" the window with possibility to add a task will show up.</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201169396-14b2e85e-0c92-4753-84c9-3450e90c3f74.png)</br>
 
 ### Add Task
