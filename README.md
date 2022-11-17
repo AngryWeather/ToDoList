@@ -1,33 +1,38 @@
 # ToDoList
 
-Strona ToDo pozwalająca dodawać i usuwać projekty. </br>
-Po odświeżeniu strony dane nie znikną, ponieważ wykorzystano local storage do przechowywania projektów i zadań. </br></br>
+ToDoList allows you to add and delete projects. </br>
+You can safely refresh the page, since the website uses local storage to store your data.</br></br>
 
-W każdym projekcie można dodać zadanie z tytułem, datą i priorytetem. </br>
-Domyślnie można znaleźć jeden projekt: "Personal". </br>
+You can add tasks with a title, date and priority to every project.</br>
+By default there's one project named "Personal".</br>
 
 ![obraz](https://user-images.githubusercontent.com/105065960/201168252-b89e5ae3-9b93-4d5d-94c4-b29ca386a5e5.png)</br>
 
 ## New Task
-Po kliknięciu w "New Task" wyświetli się okno z możliwością dodania zadania.</br>
+After clicking "New Task" the window with possibility to add task will show up.</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201169396-14b2e85e-0c92-4753-84c9-3450e90c3f74.png)</br>
 
 ### Add Task
-Grube, czerwone linie oznaczają, że pole nie może pozostać puste.</br>
-Jeżeli nie chcesz już dodać zadania, możesz kliknąć "Cancel" - wtedy okno zniknie.</br>
-Po wypełnieniu wszystkich pól, kliknij "Add Task".</br>
+Thick, red lines mean that the field can't be empty.</br>
+If you changed your mind and you don't want to add a task, you can click "Cancel".</br>
+After all fields have been filled out, click "Add Task".</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201172944-26a2f064-2b04-45f2-87fc-43c696f801b6.png)</br></br>
 
-Po chwili zobaczysz swoje zadanie poniżej nazwy projektu.
+Soon you should see your task underneath the project name.
 ![obraz](https://user-images.githubusercontent.com/105065960/201173448-45cf5290-3f94-454c-99a6-da45074d0cd2.png)</br>
-Możesz zaznaczyć zadanie jako wykonane lub je usunąć klikając "X" obok napisu "Remove".</br></br>
+You can set the task as done or remove it completely by using "X" next to "Remove".</br></br>
 
 ## Add Project
+Clicking "Add Project" will show you a field where you can enter your project's name.</br>
+![obraz](https://user-images.githubusercontent.com/105065960/201174531-8ca5a527-fe90-422d-a4fc-c4d202a319be.png)</br></br>
+Click "Add" and your project will show up in the menu on the left. You can start adding tasks to it right away.</br>
+![obraz](https://user-images.githubusercontent.com/105065960/201175139-c31c30a4-f19c-4570-b545-5b5a0010f9b5.png)</br></br>
+
 Po kliknięciu "Add Project" pojawi się pole do wpisania nazwy.</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201174531-8ca5a527-fe90-422d-a4fc-c4d202a319be.png)</br></br>
 Po kliknięciu "Add" twój projekt pojawi się w menu po lewej. Od razu możesz dodać do niego nowe zadania.</br>
 ![obraz](https://user-images.githubusercontent.com/105065960/201175139-c31c30a4-f19c-4570-b545-5b5a0010f9b5.png)</br></br>
 
 ## Remove
-Jeżeli nie chcesz już jakiegoś projektu, możesz go usunąć klikając "Remove" obok "New Task".</br>
-Zaraz po tym lista w menu się zaktualizuje.</br>
+If you don't want your project anymore you can remove it by clicking "Remove" next to "New Task".</br>
+The list in the menu will update in no time.</br>
